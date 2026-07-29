@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Topic notes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.tree.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand">
+      <p class="wordmark">Topic notes</p>
+      <p class="sub"><span id="stat-topics">0</span> topics &middot; <span id="stat-questions">0</span> questions</p>
+    </div>
+    <div class="search-box">
+      <label class="visually-hidden" for="search">Search topics</label>
+      <input id="search" type="search" placeholder="Search topics or a question number" autocomplete="off" spellcheck="false">
+      <p id="search-status" class="search-status" role="status"></p>
+    </div>
+    <nav aria-label="Sections">
+      <button id="sheet-link" type="button" class="sheet-link" aria-current="true">
+        <span class="sheet-icon" aria-hidden="true">&#9638;</span>
+        <span class="topic-name">Answer sheet</span>
+        <span id="missed-tally" class="tally"></span>
+      </button>
+      <p class="nav-label">Topics</p>
+      <ul id="topic-list" class="topic-list"></ul>
+    </nav>
+    <div class="progress">
+      <div class="progress-head">
+        <span id="progress-label">0 of 0 reviewed</span>
+        <button id="reset-progress" type="button" class="link-button">Reset</button>
+      </div>
+      <div class="progress-track"><div id="progress-fill" class="progress-fill"></div></div>
+    </div>
+  </aside>
+  <main id="page" class="page" tabindex="-1"></main>
+</div>
+<script src="data.js"></script>
+<script src="content.js"></script>
+<script src="groups.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
+
