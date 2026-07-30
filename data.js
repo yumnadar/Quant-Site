@@ -262,7 +262,7 @@ window.QUESTIONS = [
           {
             "label": "Exponent",
             "url": "https://www.purplemath.com/modules/exponent.htm"
-          }
+          },
           {
             "label": "Exponent",
             "url": "https://www.purplemath.com/modules/graphing/exponent.htm"
