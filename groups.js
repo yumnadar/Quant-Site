@@ -1,59 +1,75 @@
-// groups.js — how topics are gathered into parent categories in the sidebar.
+// sub-topics within a main topic
 // This is the ONLY file to edit to change the subtopic tree.
 // Rules:
-//   * List each parent category once, in the order it should appear. 
-//   * Under "topics", list the child topic labels exactly as they appear.
-//   * Matching ignores leading/trailing spaces, so a stray space in the CSV
-//     won't drop a topic out of its group.
+//   * List each main category once, in the order it should appear. 
+//   * Under "topics", list the sub topic labels exactly as they appear.
+
+// groups.js — the 6 assessment sections and their subtopics.
 
 window.GROUPS = [
   {
-    name: "Algebra",
+    name: "1 \u2014 Algebra & Equation Solving",
     topics: [
-      "Solving Equations",
-      "Multi-variable Algebraic Manipulation"
+      "1.1 Linear equations (one variable)",
+      "1.2 Linear equations (variable on both sides)",
+      "1.3 Rearranging formulas (literal equations)",
+      "1.4 Systems of linear equations",
+      "1.5 Quadratic equations (factoring)",
     ]
   },
   {
-    name: "Exponents & Scientific Notation",
+
+    name: "2 \u2014 Exponents, Scientific Notation & Unit Conversion",
     topics: [
-      "Exponents/Scientific Notation"
+      "2.1 Writing scientific notation",
+      "2.2 Operations with scientific notation",
+      "2.3 Metric length conversion",
+      "2.4 Compound-unit conversion",
+      "2.5 Converting squared / area units",
     ]
   },
   {
-    name: "Unit Conversion",
+
+    name: "3 \u2014 Linear Graphs",
     topics: [
-      "Unit Conversion"
+      "3.1 Slope from two points",
+      "3.2 Equation from slope and y-intercept",
+      "3.3 Slope and rate from a table",
+      "3.4 Interpreting slope and intercept in context",
+      "3.5 Reading a line from a graph",
     ]
   },
   {
-    name: "Linear Graphs",
+
+    name: "4 \u2014 Trigonometry",
     topics: [
-      "Linear Graphs"
+      "4.1 Trig ratios: sine & cosine",
+      "4.2 Trig ratios: tangent (+ Pythagorean)",
+      "4.3 Applied right-triangle trig",
+      "4.4 Geometric angle relationships (complementary)",
+      "4.5 Ladder problem: inverse trig + Pythagorean",
     ]
   },
   {
-    name: "Trigonometry",
+
+    name: "5 \u2014 Vectors & the Pythagorean Theorem",
     topics: [
-      "Trigonometric Identities(Trig Ratios)",
-      "Trigonometric Identities",
-      "Trigonometric Identities(Applied Trig)",
-      "Trig Identities/Geometric Angles",
-      "Pythagorean Theorem",
-      "Inverse Trig Functions/ Pythagorean",
-      "Inverse Trig Functions"
+      "5.1 Pythagorean theorem (diagonal of a square)",
+      "5.2 Vector decomposition (x/y components)",
+      "5.3 Vector addition (Pythagorean + direction angle)",
+      "5.4 Vector addition (component method)",
+      "5.5 Vector arithmetic (add, subtract, magnitude)",
     ]
   },
   {
-    name: "Vectors",
+
+    name: "6 \u2014 Ratios & Proportion",
     topics: [
-      "Vector Arithmetic & Decomposition"
+      "6.1 Unit rate / direct proportion",
+      "6.2 Direct proportion (scaling)",
+      "6.3 Constant of proportionality",
+      "6.4 Part-to-part ratios (mixing)",
+      "6.5 Inverse-square proportion",
     ]
   },
-  {
-    name: "Ratios & Proportion",
-    topics: [
-      "Ratios and Proportion"
-    ]
-  }
 ];
