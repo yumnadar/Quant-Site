@@ -5,8 +5,7 @@ const TOPICS = [...new Set(QUESTIONS.map(q => q.topic))].sort();
 const $ = id => document.getElementById(id);
 const norm = s => String(s).trim().toLowerCase();
 
-// saved progress 
-// Topics reviewed, questions missed are remembered in the browser's storage 
+// Topics you've reviewed, questions missed is remembered in browser's own storage
 
 const KEYS = {
   reviewed: "topic-notes-reviewed",
@@ -27,7 +26,6 @@ function saveSet(key, set) {
   try {
     localStorage.setItem(key, JSON.stringify([...set]));
   } catch {
-    /* storage unavailable — still works until the page is closed */
   }
 }
 
@@ -65,6 +63,7 @@ function buildTree() {
   if (leftovers.length) tree.push({ name: "Other", topics: leftovers });
   return tree;
 }
+
 const TREE = buildTree();
 
 function groupNameFor(topic) {
@@ -76,13 +75,14 @@ const state = {
   view: "sheet",     
   topic: null,       // which topic page is open
   question: null,    
-  focus: null,      
+  focus: null,       
   query: "",         // what's typed in the search box
   reviewed: loadSet(KEYS.reviewed),
   missed: loadSet(KEYS.missed),
-  collapsed: loadSet(KEYS.collapsed),         
-  tapMode: loadValue(KEYS.mode, "open")        // "open" = go to resources, "mark" = mark missed
+  collapsed: loadSet(KEYS.collapsed),          
+  tapMode: loadValue(KEYS.mode, "open")        
 };
+
 const topicColor = topic =>
   `hsl(${Math.round((TOPICS.indexOf(topic) * 360) / TOPICS.length)} 52% 52%)`;
 const questionsFor = topic => QUESTIONS.filter(q => q.topic === topic);
@@ -139,7 +139,7 @@ function setTapMode(mode) {
   render();
 }
 
-//sidebar
+// sidebar 
 function renderSidebar() {
   $("sheet-link").setAttribute("aria-current", String(state.view === "sheet"));
   $("missed-tally").textContent = state.missed.size ? `${state.missed.size} missed` : "";
@@ -149,7 +149,7 @@ function renderSidebar() {
   let shownTopics = 0;
   TREE.forEach(group => {
     const hits = group.topics.filter(topicMatches);
-    if (searching && !hits.length) return; // hide categories with no match
+    if (searching && !hits.length) return; 
     const subs = searching ? hits : group.topics;
     shownTopics += subs.length;
     const open = searching || !state.collapsed.has(group.name);
@@ -239,6 +239,7 @@ function renderSheet() {
         : "Tip: switch to <b>Opens resources</b> to jump straight to a topic page."}</p>
     </section>
     ${studyListHtml()}`;
+
   const grid = $("grid");
   QUESTIONS.forEach(q => {
     const tile = document.createElement("button");
@@ -257,8 +258,7 @@ function renderSheet() {
     });
     grid.appendChild(tile);
   });
-
-  // toolbar and study list wiring
+  // toolbar + study list wiring
   $("page").querySelectorAll("[data-mode]").forEach(btn =>
     btn.addEventListener("click", () => setTapMode(btn.dataset.mode))
   );
@@ -271,6 +271,7 @@ function studyListHtml() {
   const topics = [...new Set(missed.map(q => q.topic))].sort(
     (a, b) =>
       missed.filter(q => q.topic === b).length - missed.filter(q => q.topic === a).length
+
   );
   return `
     <section class="block study">
@@ -330,6 +331,9 @@ function renderTopic() {
       ${info.summary
         ? `<p class="summary">${escapeHtml(info.summary)}</p>`
         : `<p class="summary placeholder">No summary yet. Add one in <code>content.js</code> under <code>${escapeHtml(topic)}</code>.</p>`}
+      ${info.source && info.source.url
+        ? `<p class="summary-source">Source: <a href="${escapeHtml(info.source.url)}" target="_blank" rel="noopener">${escapeHtml(info.source.name || "source")}</a></p>`
+        : ""}
       <div class="page-actions">
         <button type="button" class="tick-button" id="tick" aria-pressed="${reviewed}">
           ${reviewed ? "&#10003; Reviewed" : "Mark as reviewed"}
@@ -433,6 +437,7 @@ function render() {
   renderSidebar();
   state.view === "topic" ? renderTopic() : renderSheet();
 }
+
 $("stat-topics").textContent = TOPICS.length;
 $("stat-questions").textContent = QUESTIONS.length;
 $("sheet-link").addEventListener("click", () => showSheet());
@@ -440,6 +445,7 @@ $("search").addEventListener("input", event => {
   state.query = event.target.value;
   renderSidebar();
 });
+
 $("search").addEventListener("keydown", event => {
   if (event.key !== "Enter") return;
   const q = state.query.trim();
