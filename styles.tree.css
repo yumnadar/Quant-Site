@@ -1,5 +1,4 @@
 .group { margin-bottom: 2px; }
-
 .group-head {
   display: flex;
   align-items: center;
@@ -16,20 +15,16 @@
   padding: 8px 10px;
   cursor: pointer;
 }
-
 .group-head:hover { background: var(--paper); }
 .group-head:focus-visible { outline: 2px solid var(--pen); outline-offset: -2px; }
-
 .group-head .caret {
   font-size: 10px;
   color: var(--ink-soft);
   transition: transform 0.15s ease;
   flex: none;
 }
-
 .group-head[aria-expanded="true"] .caret { transform: rotate(90deg); }
 .group-head .group-name { flex: 1 1 auto; }
-
 .sublist {
   list-style: none;
   margin: 2px 0 6px;
@@ -54,7 +49,6 @@
   padding: 7px 10px;
   cursor: pointer;
 }
-
 .topic-button:hover { background: var(--paper); }
 .topic-button:focus-visible { outline: 2px solid var(--pen); outline-offset: -2px; }
 .topic-button[aria-current="true"] { background: var(--pen-wash); color: var(--pen); font-weight: 500; }
@@ -144,8 +138,8 @@
 
 :root {
   --serif: "Times New Roman", Times, serif;
-  --sans:  "Times New Roman", Times, serif;   
-  --mono:  "Times New Roman", Times, serif;  
+  --sans:  "Times New Roman", Times, serif;   /* body UI text  */
+  --mono:  "Times New Roman", Times, serif;   /* Q numbers, tallies, small labels */
   --head:  "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
 }
 
@@ -156,4 +150,37 @@ h1,
 .selection-head h3,
 .wordmark {
   font-family: var(--head);
+}
+
+.coach-link {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: calc(100% - 24px);
+  margin: 0 12px 6px;
+  padding: 10px 12px;
+  border: 1px solid var(--pen);
+  border-radius: var(--radius);
+  background: var(--pen-wash);
+  color: var(--pen);
+  font-family: var(--head);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.coach-link:hover { background: var(--pen); color: #fff; }
+.coach-link:focus-visible { outline: 2px solid var(--pen); outline-offset: 2px; }
+.coach-icon { flex: none; font-size: 13px; }
+.coach-name { flex: 1 1 auto; }
+.coach-ext { flex: none; font-size: 13px; }
+
+.coach-desc {
+  margin: 0 12px 4px;
+  padding: 0 2px;
+  font-family: var(--serif);
+  font-size: 12.5px;
+  line-height: 1.45;
+  color: var(--ink-soft);
 }
