@@ -1669,7 +1669,7 @@ window.QUESTIONS = [
           {
             "label": "Geometry pythagorean theorem",
             "url": "https://www.khanacademy.org/math/geometry-home/geometry-pythagorean-theorem"
-          }
+          },
           {
             "label": "Pythagorean theorem 1",
             "url": "https://www.khanacademy.org/math/cc-eighth-grade-math/cc-8th-geometry/cc-8th-pythagorean-theorem/e/pythagorean_theorem_1"
@@ -2728,10 +2728,10 @@ window.QUESTIONS = [
       {
         "name": "Mathematics LibreTexts",
         "links": [
-                   { 5453{ 5454 "label": "5.04%3A Ratios and Proportions", 5455"label": "5.04%3A Ratios and Proportions", 5456 "url": 
-"https://math.libetexts.org/Bookshelves/Applied_Mathematics/Contemporary_Mathematics_(OpenStax)/05%3A__Algebra/5.04%3A__Ratios_and_Proportions" 5457"url": 
-"https://math.libretexts.org/Bookshelves/Applied_Mathematics/Contemporary_Mathematics_(OpenStax)/05%3A__Algebra/5.04%3A__Ratios_and_Proportions" 5458 },
-5459}
+          {  
+             "label": "5.04%3A Ratios and Proportions", 
+             "url":"https://math.libetexts.org/Bookshelves/Applied_Mathematics/Contemporary_Mathematics_(OpenStax)/05%3A__Algebra/" 
+          },
           {
             "label": "5.01%3A Ratios Rates Proportions",
             "url": "https://math.libretexts.org/Courses/Northeast_Wisconsin_Technical_College/College_Technical_Math_1A_(NWTC)/05%3A_Proportions_and_Variation/5.01%3A_Ratios_Rates_Proportions"
