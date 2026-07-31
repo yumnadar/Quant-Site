@@ -222,7 +222,7 @@ function renderSheet() {
       <p class="eyebrow">${QUESTIONS.length} questions &middot; ${TOPICS.length} topics</p>
       <h1>Which one did you miss?</h1>
       <p class="summary">Every question on the test, grouped by what it's testing.
-        Tap one to ${opening ? "jump to its resources" : "mark it missed"} — and a
+        Tap one to ${opening ? "jump to its resources" : "mark it missed"} and a
         study list builds itself from whatever you mark.</p>
     </header>
     <section class="block">
