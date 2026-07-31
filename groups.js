@@ -1,10 +1,4 @@
-// sub-topics within a main topic
-// This is the ONLY file to edit to change the subtopic tree.
-// Rules:
-//   * List each main category once, in the order it should appear. 
-//   * Under "topics", list the sub topic labels exactly as they appear.
-
-// groups.js — the 6 assessment sections and their subtopics.
+// The 6 assessment sections and their subtopics.
 
 window.GROUPS = [
   {
@@ -18,7 +12,6 @@ window.GROUPS = [
     ]
   },
   {
-
     name: "2: Exponents, Scientific Notation & Unit Conversion",
     topics: [
       "2.1 Writing scientific notation",
@@ -29,7 +22,6 @@ window.GROUPS = [
     ]
   },
   {
-
     name: "3: Linear Graphs",
     topics: [
       "3.1 Slope from two points",
@@ -40,7 +32,6 @@ window.GROUPS = [
     ]
   },
   {
-
     name: "4: Trigonometry",
     topics: [
       "4.1 Trig ratios: sine & cosine",
@@ -51,7 +42,6 @@ window.GROUPS = [
     ]
   },
   {
-
     name: "5: Vectors & the Pythagorean Theorem",
     topics: [
       "5.1 Pythagorean theorem (diagonal of a square)",
@@ -62,7 +52,6 @@ window.GROUPS = [
     ]
   },
   {
-
     name: "6: Ratios & Proportion",
     topics: [
       "6.1 Unit rate / direct proportion",
