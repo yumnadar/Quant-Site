@@ -353,12 +353,6 @@ function renderTopic() {
       ${sourcesHtml(mergeSources(questions))}
     </section>
     <section class="block">
-      <h2>Notes</h2>
-      ${info.notes && info.notes.length
-        ? info.notes.map(p => `<p>${escapeHtml(p)}</p>`).join("")
-        : placeholder("notes", topic, "add paragraphs to the notes list")}
-    </section>
-    <section class="block">
       <h2>Videos</h2>
       ${info.videos && info.videos.length
         ? `<ul class="video-list">${info.videos
